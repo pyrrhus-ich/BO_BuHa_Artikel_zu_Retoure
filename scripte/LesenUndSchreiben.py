@@ -58,7 +58,8 @@ wbDst = op.Workbook() # erzeugt Workbook Objekt
 ws = wbDst.active     # erzeugt das erste sheet
 
 #schreibt alle Werte aus 'retListe' in das Sheet
-IndWs = 0
+
+IndWs = 0  #Zähler für die for schleife
 for el in retListe:
     ws['A'+str(IndWs+1)] = retListe[IndWs]
     IndWs+=1
