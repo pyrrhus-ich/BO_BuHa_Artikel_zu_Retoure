@@ -95,7 +95,21 @@ for el in buHaEindeutigeRetourennummer:
             resultList.append(val)
 
 #Die "resultListe" enthält jetzt alle Zeilen aus dem BO Bericht die auch in der Buha vorhanden sind
-            
+# Der nächste Schritt ist das Schreiben des neuen Files
+
+#Erzeugt das neue File 
+wbDst = op.Workbook() # erzeugt Workbook Objekt
+ws = wbDst.active     # erzeugt das erste sheet
+
+# <<<<<<<<< PROBLEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+IndWs = 0  #Zähler für die for schleife
+for el in resultList:
+    ws['A'+str(IndWs+1)] = resultList[IndWs]
+    IndWs+=1
+# <<<<<<<<<< PROBLEM ENDE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+wbDst.save(dstFile) #Speichert das File
+wb.close()     
 print("\nFertig")
     
 
