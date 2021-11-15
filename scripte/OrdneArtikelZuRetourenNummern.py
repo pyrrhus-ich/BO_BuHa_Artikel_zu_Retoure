@@ -1,6 +1,9 @@
 import os, csv
+from Basis import folderList
+from LegeVerzeichnisseNeuAn import checkFolders
 import openpyxl as op
 from openpyxl.styles import PatternFill, Font
+
 
 '''
 - Diese Script nimmt ein CSV File(Bo Bericht) aus dem Ordner Excel, wandelt es um in ein XSLX File und packt es nach 'src_BO
@@ -8,6 +11,13 @@ from openpyxl.styles import PatternFill, Font
 - Im dst Ordner findet sich dann das Endergebniss
 - Wegen GIT sind alle Files aus den Ordnern entfernt
 Vorraussetzungen:
+    Ordnerstruktur:
+        Excel---|
+                |-dst
+                |-src_BuHa
+                |-src_BO
+                |-scripte
+                |-logfiles
     1. BO Bericht aus BO\Meine Favoriten\96_BuHa...\BA_BO_Bericht ist erstellt und als CSV exportiert
     2. Das erstellte CSV File liegt im Stammverzeichniss (Hier also 'Excel')
     3. Das File der Buchhaltung ist ein Excel File mit 2 Spalten (Spalte A ist Marktnummer (M199) Spalte B ist die Retourennummer)
@@ -16,6 +26,10 @@ Wenn alle Vorraussetzungen erfüllt sind, sollte es funktionieren.
 
 print("Es geht los")
 
+checkFolders(folderList);
+
+
+'''
 # <<< Dieser Bereich definiert die Variablen für das gesamte Script >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 workDir = os.getcwd()                                   # legt das Arbeitsverzeichnis fest
@@ -160,3 +174,4 @@ wbDst.close()
 print("Das schreiben des Ausgabefiles ist abgeschlossen. Es wird bereitgestellt in : " + dstFile)   
 print("\nFertig Alles erledigt. Das File kann versendet werden")
 
+'''
