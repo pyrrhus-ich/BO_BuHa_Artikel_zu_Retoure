@@ -1,4 +1,4 @@
-import os, csv
+import csv
 import openpyxl as op
 from basis import *
 
