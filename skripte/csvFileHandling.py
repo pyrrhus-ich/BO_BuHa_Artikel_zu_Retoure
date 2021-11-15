@@ -1,6 +1,6 @@
 import os, csv
 import openpyxl as op
-from basis import *
+from skripte.basis import srcFldBo
 
 
 #<<<<<<< Hier wird das CSV File in ein XLSX File umgewandelt >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

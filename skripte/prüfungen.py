@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
-
-from basis import *
+from skripte.basis import csvSrc
 
 
 # Das Script prüft ob alle Verzeichnisse vorhanden sind. Ist dies nicht der Fall legt es sie an
