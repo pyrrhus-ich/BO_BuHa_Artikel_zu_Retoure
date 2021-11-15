@@ -15,4 +15,4 @@ dstFile='./dst/'+dstFileName
 neededFiles=[csvSrc, srcFileBuHa]        # List der für den Start erforderlichen Dateien
 buHaEindeutigeRetourennummer =[] #zusammengesetzte Retourennummer aus dem Src File der Buchhaltung
 valList=[] # zusammengestzte Retourennummer aus dem SrcFile BO xlsx
-resultList=[("BuKr","Zuordnung","Zusammengesetzt","Artikelnummer","Artikelbezeichnung")]; #speichert die Listeneinträge aus valList die auch in BuHaEindeutige Retourennummer vorkommen
+resultList=[("BuKr","Retoure","Zusammengesetzt","Artikelnummer","Artikelbezeichnung")]; #speichert die Listeneinträge aus valList die auch in BuHaEindeutige Retourennummer vorkommen

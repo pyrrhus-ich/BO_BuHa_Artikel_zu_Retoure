@@ -1,4 +1,4 @@
-from basis import *
+from skripte.basis import resultList
 
 # Vergleicht die zusammengesetzten Retourennummern aus beiden Listen
 def vergleichListen(srcBuHa, srcBO):

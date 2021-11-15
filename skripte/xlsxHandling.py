@@ -1,6 +1,6 @@
 import openpyxl as op
 from openpyxl.styles import PatternFill, Font
-from basis import *
+from skripte.basis import buHaEindeutigeRetourennummer, valList
 
 
 

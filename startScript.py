@@ -1,8 +1,8 @@
-from basis import *
-from prüfungen import checkFolders, checkFile
-from csvFileHandling import csvToXlsx
-from xlsxHandling import readSrcBuHa, bearbBOXlsx, createValList, createDstFile
-from vergleichListen import vergleichListen
+from skripte.basis import *
+from skripte.prüfungen import checkFolders, checkFile
+from skripte.csvFileHandling import csvToXlsx
+from skripte.xlsxHandling import readSrcBuHa, bearbBOXlsx, createValList, createDstFile
+from skripte.vergleichListen import vergleichListen
 
 
 checkFolders(folderList); #von prüfungen.py prüft ob die Folderstruktur vorhanden ist
