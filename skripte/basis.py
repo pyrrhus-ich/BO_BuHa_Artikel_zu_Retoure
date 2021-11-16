@@ -1,5 +1,5 @@
 import os
-#Das Script legt die Basisvariablen fest. Z.B. Die Namen für die  Ordnerstruktur
+#Diese Datei legt die Basisvariablen fest. Z.B. Die Namen für die  Ordnerstruktur
 
 workDir = os.getcwd()                                   # legt das Arbeitsverzeichnis fest
 folderList = ["dst", "src_BuHa", "src_BO", "log", "arc"]              # legt die Liste der Verzeichnisse fest
@@ -13,6 +13,9 @@ srcFileBo =''                                           # wird erst mal nur dekl
 dstFileName="Zuordnung_Artikel_zur_Retoure.xlsx"
 dstFile='./dst/'+dstFileName
 neededFiles=[csvSrc, srcFileBuHa]        # List der für den Start erforderlichen Dateien
-buHaEindeutigeRetourennummer =[] #zusammengesetzte Retourennummer aus dem Src File der Buchhaltung
-valList=[] # zusammengestzte Retourennummer aus dem SrcFile BO xlsx
+buHaValList=[];                          # enthält die Liste aus der BuHa Basisdatei 
+buHaEindeutigeRetourennummer =[]         # zusammengesetzte Retourennummer aus dem Src File der Buchhaltung
+valList=[]                               # zusammengesetzte Retourennummer aus dem SrcFile BO xlsx
 resultList=[("BuKr","Retoure","Zusammengesetzt","Artikelnummer","Artikelbezeichnung")]; #speichert die Listeneinträge aus valList die auch in BuHaEindeutige Retourennummer vorkommen
+resLstRetNr=[] #enthält alle Zeilen der Retourennummern also für jeden Artikel eine Zeile
+nichtGefundeneRetouren=buHaEindeutigeRetourennummer

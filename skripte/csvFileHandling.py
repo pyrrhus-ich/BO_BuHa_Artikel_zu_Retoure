@@ -5,7 +5,7 @@ from skripte.basis import srcFldBo
 
 #<<<<<<< Hier wird das CSV File in ein XLSX File umgewandelt >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 def csvToXlsx(sourceFile):
-    print("csv wird in Excel umgewandelt")
+    print("csv wird in Excel umgewandelt : csvToXlsx()")
     csvWb = op.Workbook()
     csvWs = csvWb.active
     with open(sourceFile) as f:
@@ -14,7 +14,7 @@ def csvToXlsx(sourceFile):
             csvWs.append(row)
     csvWb.save(srcFldBo + 'BA_BO_Bericht.xlsx')
     f.close()
-    print("Excel File wurde erstellt in : " + srcFldBo)
+    #print("Excel File wurde erstellt in : " + srcFldBo)
 
 
                 
