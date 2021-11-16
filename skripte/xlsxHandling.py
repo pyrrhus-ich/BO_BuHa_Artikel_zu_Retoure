@@ -1,7 +1,7 @@
 import openpyxl as op
 from openpyxl.styles import PatternFill, Font
 from colorama import init, Fore, Style # Colorama für farbige Terminalausgaben
-from skripte.basis import buHaEindeutigeRetourennummer, valList, buHaValList
+from skripte.basis import buHaEindeutigeRetourennummer, valList, buHaValList, nichtGefundeneRetouren
 init()
 
 
@@ -76,14 +76,32 @@ def createDstFile(baseList, dstFileName): #resulList, dstFile
     ws.column_dimensions['A'].width = 12
     ws.column_dimensions['B'].width = 18
     ws.column_dimensions['C'].width = 22
-    ws.column_dimensions['D'].width = 100
+    ws.column_dimensions['D'].width = 50
     #Setzt den Autofilter über alle Spalten
     ws.auto_filter.ref = ws.dimensions
-    # Setze für die Überschrift den Background Color zu Blau | Schriftgröße zu 14 | Schriftfarbe zu Weiss
-    for rows in ws.iter_rows(min_row=1, max_row=1, min_col=1, max_col=4):
-        for cell in rows:
-            cell.fill = PatternFill(start_color="2f48ff", end_color="2f48ff", fill_type = "solid")
-            cell.font = Font(size=14, color="FFFFFF")
+    if len(nichtGefundeneRetouren)>0:
+        ws.column_dimensions['E'].width = 35
+        ws['E1']="Nicht gefunden"
+        # Setze für die Überschrift den Background Color zu Blau | Schriftgröße zu 14 | Schriftfarbe zu Weiss
+        for rows in ws.iter_rows(min_row=1, max_row=1, min_col=1, max_col=5):
+            for cell in rows:
+                cell.fill = PatternFill(start_color="2f48ff", end_color="2f48ff", fill_type = "solid")
+                cell.font = Font(size=14, color="FFFFFF")
+        rangeEnd = len(nichtGefundeneRetouren)+2  
+        #print(rangeEnd)
+        for i in range(2,rangeEnd):
+            el=i-2
+            cnt = 2
+            while cnt <= rangeEnd:
+                cellref=ws.cell(row=i, column=5)
+                cellref.value=nichtGefundeneRetouren[el] 
+                cnt+=1
+    else:
+        # Setze für die Überschrift den Background Color zu Blau | Schriftgröße zu 14 | Schriftfarbe zu Weiss
+        for rows in ws.iter_rows(min_row=1, max_row=1, min_col=1, max_col=4):
+            for cell in rows:
+                cell.fill = PatternFill(start_color="2f48ff", end_color="2f48ff", fill_type = "solid")
+                cell.font = Font(size=14, color="FFFFFF")
     #ws['A1'].fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type = "solid")
     #print("Alles ist schön. File kann gespeichert werden")
     wbDst.save(dstFileName) #Speichert das File
@@ -91,3 +109,6 @@ def createDstFile(baseList, dstFileName): #resulList, dstFile
     print(Fore.BLUE + "Das schreiben des Ausgabefiles ist abgeschlossen. Es wird bereitgestellt in : " + dstFileName)   
     print(Style.RESET_ALL, end="")#Setzt die Farbeinstellungen wieder zurück
     #print("\nFertig Alles erledigt. Das File kann versendet werden")
+
+
+    

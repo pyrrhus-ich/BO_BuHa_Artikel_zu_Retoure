@@ -15,7 +15,6 @@ vergleichAnzahl(buHaValList,buHaEindeutigeRetourennummer)
 bearbBOXlsx(srcFileBo)                                      #Baut in der  BO xslx Datei die Retourennummer zusammen
 createValList(srcFileBo)                                    #erstellt eine Liste mit den zusammengesetzten Retourennummern aus dem Bo xlsx
 vergleichListen(buHaEindeutigeRetourennummer, valList)      #vergleicht beide Listen und speichert übereinstimmungen
-
 checkRetoure(resLstRetNr)
 createDstFile(resultList, dstFile)                          #Erstellt die  endgültige Datei und formatiert sie. 
 
