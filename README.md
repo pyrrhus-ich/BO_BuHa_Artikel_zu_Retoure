@@ -4,16 +4,35 @@
 - Im Ordner src_BuHa befindet sich ein Excel File mit Markt und Retourennummer Spalte A ist Marktnummer (M199) Spalte B ist die Retourennummer
 - Im dst Ordner findet sich dann das Endergebniss
 - Wegen GIT sind alle Files aus den Ordnern entfernt
+
 Vorraussetzungen:
-    Ordnerstruktur:
+	- Python 3 ist auf dem ausführendem Rechner installiert. 
+	- Dateiendung py muss mit Python verknüpft sein
+	- dst Ordner ist leer
+	- src_BuHa ist leer
+	- src_BO ist leer
+	- Folgende Ordnerstruktur ist vorhanden (wird wenn nicht vorhanden vom Script angelegt)
+    
         Excel---|
-                |-dst
-                |-src_BuHa
-                |-src_BO
-                |-scripte
-                |-log
-                |-arc
-    1. BO Bericht aus BO\Meine Favoriten\96_BuHa...\BA_BO_Bericht ist erstellt und als CSV exportiert
-    2. Das erstellte CSV File liegt im Stammverzeichniss (Hier also 'Excel')
-    3. Das File der Buchhaltung ist ein Excel File mit 2 Spalten (Spalte A ist Marktnummer (M199) Spalte B ist die Retourennummer)
+					 |-dst
+					 |-src_BuHa
+					 |-src_BO
+					 |-scripte
+                     |-log
+					 |-arc
+					 
+					 
+    - BO Bericht aus BO\Meine Favoriten\96_BuHa...\BA_BO_Bericht ist erstellt und als CSV exportiert
+    - Das erstellte CSV File liegt im Stammverzeichniss (Hier also 'Excel')
+    - Das File der Buchhaltung ist ein Excel File mit 2 Spalten (Spalte A ist Marktnummer (M199) Spalte B ist die  Retourennummer) und liegt im Ordner src_BuHa
+	
 Wenn alle Vorraussetzungen erfüllt sind, sollte es funktionieren.
+
+Wenn man aus der Konsole startet sieht man die Meldungen. Dazu Ordner in der Konsole öffnen und 
+"startScript.py" eingeben. Nach Enter läuft es. Ansonsten Doppelklick auf "startScript"
+
+Entweder in der Konsole oder im Ausgabefile werden die nichtgefundenen Retouren angezeigt. Diese dann noch
+mal manuell in BO suchen und den Zeitraum des Berichtes bis zu diesem Zeitraum erweitern.
+
+Anschliessend das Script neu starten
+
