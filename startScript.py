@@ -5,7 +5,7 @@ from skripte.csvFileHandling import csvToXlsx
 from skripte.xlsxHandling import readSrcBuHa, bearbBOXlsx, createValList, createDstFile
 from skripte.vergleichListen import vergleichListen
 
-
+input(" <<< Zum starten 'Enter' drücken >>> ")
 checkFolders(folderList);                                   #prüft ob die Ordnerstruktur vorhanden ist
 checkFile(workDir, neededFiles)                             #prüft ob die Startdateien BA_BO_Berichte.csv und die Datei der BuHa vorhanden sind
 csvToXlsx(csvSrc)                                           #schreibt alle Zeilen aus dem BA_BO_Berichte.csv in eine Excel Datei

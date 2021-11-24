@@ -104,7 +104,7 @@ def createDstFile(baseList, dstFileName): #resulList, dstFile
                 cell.font = Font(size=14, color="FFFFFF")
     wbDst.save(dstFileName) #Speichert das File
     wbDst.close()
-    print(Fore.BLUE + "Das schreiben des Ausgabefiles ist abgeschlossen. Es wird bereitgestellt in : " + dstFileName)   
+    print(Fore.GREEN + "Das schreiben des Ausgabefiles ist abgeschlossen. Es wird bereitgestellt in : " + dstFileName)   
     print(Style.RESET_ALL, end="")#Setzt die Farbeinstellungen wieder zurück
     #print("\nFertig Alles erledigt. Das File kann versendet werden")
 
