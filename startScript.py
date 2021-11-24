@@ -17,4 +17,4 @@ createValList(srcFileBo)                                    #erstellt eine Liste
 vergleichListen(buHaEindeutigeRetourennummer, valList)      #vergleicht beide Listen und speichert übereinstimmungen
 checkRetoure(resLstRetNr)
 createDstFile(resultList, dstFile)                          #Erstellt die  endgültige Datei und formatiert sie. 
-
+input("<<< Zum Beenden 'Enter' drücken >>>")                #Hält das Terminal Fenster offen
