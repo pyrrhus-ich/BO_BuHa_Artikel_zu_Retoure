@@ -1,5 +1,5 @@
 # Excel
-
+# Erstellt für Tanja Schmitt zuordnung Artikel zu Retouren
 - Diese Script nimmt ein CSV File(Bo Bericht) aus dem Ordner Excel, wandelt es um in ein XSLX File und packt es nach 'src_BO
 - Im Ordner src_BuHa befindet sich ein Excel File mit Markt und Retourennummer Spalte A ist Marktnummer (M199) Spalte B ist die Retourennummer
 - Im dst Ordner findet sich dann das Endergebniss
@@ -22,7 +22,14 @@ Vorraussetzungen:
 					 |-arc
 					 
 					 
-    - BO Bericht aus BO\Meine Favoriten\96_BuHa...\BA_BO_Bericht ist erstellt und als CSV exportiert
+    - BO Bericht aus BO\Meine Favoriten\96_BuHa...\BA_BO_Bericht ist erstellt und als CSV exportiert. Dazu im Export Fenster folgendes auswählen:
+		- Daten
+		- Dateityp: CSV
+		- Textqualifizierer: "
+		- Spaltenbegrenzungszeichen: ;
+		- Zeichensatz : Central European (Windows -1250)
+		- Haken setzen bei: Als Standardwerte festlegen
+	- Wichtig ist, das der Name nicht geändert wird.
     - Das erstellte CSV File liegt im Stammverzeichniss (Hier also 'Excel')
     - Das File der Buchhaltung ist ein Excel File mit 2 Spalten (Spalte A ist Marktnummer (M199) Spalte B ist die  Retourennummer) und liegt im Ordner src_BuHa
 	

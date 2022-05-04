@@ -14,7 +14,7 @@ def readSrcBuHa(source):
     wbuHa = op.load_workbook(source,data_only=True) # lädt das File
     wsbuHa = wbuHa.worksheets[0]
     #schreibt die Werte in eine Liste wenn der erste value der Zeile nicht none ist
-    for value in wsbuHa.iter_rows(min_row=1, values_only=True):
+    for value in wsbuHa.iter_rows(min_row=1, max_col=1, values_only=True):
             if value[0] is not None:
                 buHaValList.append(value)
     # Ab hier fangen wir an die Retourennummer zusammen zu bauen im Form M199-122334
@@ -40,7 +40,16 @@ def bearbBOXlsx(sourceFile):
     # Ab hier fangen wir an die Retourennummer zusammen zu bauen im Form M199-122334
     eindeutigeRetourennummer =[]
     for el in valList:
-        eindeutigeRetourennummer.append(el[0]+"-"+ str(el[1]))
+        elNull = ""
+        if el[0]=="GW040000":
+            elNull = "M860"
+        elif el[0] == "GW030000":
+            elNull = "S802"
+        else:
+            elNull = el[0][:-4]
+        eindeutigeRetourennummer.append(elNull +"-"+ str(el[1]))
+        print(elNull +"-"+ str(el[1]))
+        
     # Die zusammengesetzte 'Eindeutige Retourennummer' wird in die Spalte C geschrieben
     indEl = 1
     for el in eindeutigeRetourennummer:
@@ -74,7 +83,7 @@ def createDstFile(baseList, dstFileName): #resulList, dstFile
     # Setzt die Spaltenbreiten
     ws.column_dimensions['A'].width = 12
     ws.column_dimensions['B'].width = 18
-    ws.column_dimensions['C'].width = 22
+    ws.column_dimensions['C'].width = 20
     ws.column_dimensions['D'].width = 50
     ws.column_dimensions['E'].width = 10
     ws.column_dimensions['F'].width = 35
