@@ -2,7 +2,7 @@ import os
 import openpyxl as op
 from openpyxl.styles import PatternFill, Font
 from colorama import init, Fore, Style # Colorama für farbige Terminalausgaben
-#init()
+init()
 
 # Definiert die Variablen
 
@@ -36,17 +36,20 @@ def readSrc(sourceFile, dstLstSrc):
 # liEl = Das einzufügende Element
 # dst = die Zielliste(dstLst) in die liEl eingefügt wird
 def crtHeadline(liEl, dst):
+    print("Beginne mit dem Schreiben der Kopfzeile in der dstLst")
     liEl.append("HSN Nr.")
     liEl.append("Hersteller")
     liEl.append("WGR")
     liEl.append("WGR Name")
     dst.append(liEl)
+    print("Schreiben der Kopfzeile in der dstLst ist beendet")
 
 # Erstellt alle weiteren Elemente der Zielliste (dstLst)
 # Hier erfolgt dann die weitere Bearbeitung der einzelnen Listelemente der Ursprungsliste
 # In diesem Beispiel ging es darum die Warengruppennummern die jeweils in i[3] der Sourcelistelement gespeichert sind
 # so zu splitten, das man darüber iterieren kann und dann für jede Warengruppe eine Zeile bekommt
 def crtDstLst(src, liEl, dst):
+    print("Beginne mit dem Schreiben der restlichen Elemente in der dstLst")
     liEl = []
     for i in src:
         cnt = 0
@@ -61,6 +64,7 @@ def crtDstLst(src, liEl, dst):
                 dst.append(liEl)
                 liEl = []
                 print(dst)
+    print("Schreiben der restlichen Elemente in der dstLst abgeschlossen")
 
 # Hier erstellen wir das endgültige Excelfile
 def createDstFile(baseList, dstFileName): #resulList, dstFile
